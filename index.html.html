@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Portfolio of Rownok Jahan Rudro — BBA graduate, AI learner and digital creative from Bangladesh.">
+  <title>Rownok Jahan Rudro | Portfolio</title>
+  <style>
+    :root{
+      --bg:#0b1020;--panel:#111a2e;--panel2:#151f36;--text:#edf3ff;
+      --muted:#a7b4cc;--accent:#62a8ff;--accent2:#8b7cff;--line:rgba(255,255,255,.10);
+      --shadow:0 18px 55px rgba(0,0,0,.24);--radius:20px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:
+      radial-gradient(ellipse at 80% 0%,rgba(98,168,255,.12),transparent 34%),var(--bg);
+      color:var(--text);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .container{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:850;letter-spacing:-.6px;font-size:1.12rem}.brand span{color:var(--accent)}
+    .nav-links{display:flex;align-items:center;gap:25px;color:var(--muted);font-size:.92rem}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent)}
+    .nav-actions{display:flex;gap:10px;align-items:center}
+    .icon-btn,.menu-btn{border:1px solid var(--line);background:var(--panel);color:var(--text);width:40px;height:40px;border-radius:12px;cursor:pointer}
+    .menu-btn{display:none}
+    .hero{min-height:calc(90vh - 74px);display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:55px;padding:90px 0 75px}
+    .eyebrow{color:var(--accent);font-weight:750;letter-spacing:2px;text-transform:uppercase;font-size:.76rem}
+    h1{font-size:clamp(2.7rem,6vw,5.2rem);line-height:1.06;letter-spacing:-3px;margin:18px 0}
+    h1 span,.gradient{background:linear-gradient(100deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{color:var(--muted);max-width:620px;font-size:1.08rem}
+    .hero-buttons{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 19px;border-radius:12px;font-weight:750;border:1px solid var(--line);transition:.2s;cursor:pointer}
+    .btn-primary{background:linear-gradient(110deg,#398eea,#7768e9);border:0;color:white;box-shadow:0 10px 28px rgba(70,126,235,.25)}
+    .btn-secondary{background:var(--panel);color:var(--text)}
+    .btn:hover{transform:translateY(-3px)}
+    .hero-card{position:relative;background:linear-gradient(145deg,rgba(98,168,255,.17),rgba(139,124,255,.08));border:1px solid rgba(133,166,255,.24);border-radius:28px;padding:30px;box-shadow:var(--shadow);overflow:hidden}
+    .hero-card:before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:rgba(98,168,255,.13);filter:blur(3px);right:-80px;top:-100px}
+    .initials{width:112px;height:112px;border-radius:30px;display:grid;place-items:center;font-size:2.5rem;font-weight:900;background:linear-gradient(135deg,#398eea,#8170ed);box-shadow:0 15px 35px rgba(65,115,220,.3);margin-bottom:25px}
+    .hero-card h2{font-size:1.35rem}.hero-card p{font-size:.94rem;margin-top:7px}
+    .availability{display:inline-flex;align-items:center;gap:8px;background:rgba(48,196,130,.1);color:#6ee0ae;border:1px solid rgba(48,196,130,.25);border-radius:30px;padding:7px 11px;font-size:.78rem;font-weight:750;margin-bottom:20px}
+    .dot{width:7px;height:7px;background:#45d69b;border-radius:50%;box-shadow:0 0 0 4px rgba(69,214,155,.12)}
+    .quick-facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px}
+    .fact{background:rgba(9,15,31,.36);border:1px solid var(--line);border-radius:13px;padding:13px}
+    .fact strong{display:block;font-size:1.05rem}.fact small{color:var(--muted)}
+    section{padding:82px 0}
+    .section-head{text-align:center;margin-bottom:42px}
+    .section-head h2{font-size:clamp(2rem,4vw,2.8rem);letter-spacing:-1.3px;margin:7px 0}
+    .section-head p{color:var(--muted)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+    .card{background:linear-gradient(145deg,var(--panel),rgba(17,26,46,.72));border:1px solid var(--line);border-radius:var(--radius);padding:27px;box-shadow:var(--shadow)}
+    .card h3{font-size:1.15rem;margin-bottom:12px}.card p{color:var(--muted)}
+    .info-list{display:grid;gap:13px;margin-top:17px}
+    .info-row{display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid var(--line);padding-bottom:10px;font-size:.92rem}
+    .info-row span:first-child{color:var(--muted)}.info-row span:last-child{text-align:right;font-weight:650}
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .skill-card{padding:23px}.skill-card .symbol{font-size:1.45rem;margin-bottom:10px}.skill-card p{font-size:.9rem;color:var(--muted)}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+    .tag{font-size:.78rem;color:#c8dcff;background:rgba(98,168,255,.1);border:1px solid rgba(98,168,255,.2);padding:6px 10px;border-radius:30px}
+    .timeline{max-width:800px;margin:auto;display:grid;gap:18px}
+    .timeline-item{position:relative;padding:22px 25px 22px 28px;border-left:2px solid rgba(98,168,255,.5)}
+    .timeline-item:before{content:"";position:absolute;left:-7px;top:28px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(98,168,255,.12)}
+    .timeline-item h3{font-size:1.05rem}.timeline-item .meta{color:var(--accent);font-size:.83rem;font-weight:700;margin:4px 0 8px}.timeline-item p{color:var(--muted);font-size:.92rem}
+    .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .project{min-height:220px;display:flex;flex-direction:column;justify-content:space-between}
+    .project-top{display:flex;justify-content:space-between;align-items:center}
+    .project-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:rgba(98,168,255,.12);font-size:1.35rem}
+    .project p{color:var(--muted);margin:12px 0 17px}
+    .project .tag{display:inline-block}
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:22px}
+    .contact-method{padding:14px 0;border-bottom:1px solid var(--line)}
+    .contact-method small{display:block;color:var(--muted)}.contact-method a{font-weight:700;overflow-wrap:anywhere}
+    form{display:grid;gap:13px}
+    input,textarea{width:100%;padding:13px 14px;border-radius:11px;border:1px solid var(--line);background:rgba(5,10,23,.35);color:var(--text);outline:none}
+    input:focus,textarea:focus{border-color:var(--accent)}textarea{min-height:130px;resize:vertical}
+    .form-note{font-size:.8rem;color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.86rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visible{opacity:1;transform:none}
+    body.light{--bg:#f4f7fc;--panel:#fff;--panel2:#edf2fa;--text:#142039;--muted:#5d6a80;--line:rgba(18,35,65,.12);--shadow:0 15px 40px rgba(32,58,100,.08);background:radial-gradient(ellipse at 80% 0%,rgba(98,168,255,.15),transparent 34%),var(--bg)}
+    body.light header{background:rgba(244,247,252,.86)}body.light .fact{background:rgba(255,255,255,.55)}
+    body.light input,body.light textarea{background:#f7f9fd}
+    @media(max-width:850px){.hero{grid-template-columns:1fr;gap:30px;padding-top:65px}.hero-card{max-width:520px}.skills-grid{grid-template-columns:repeat(2,1fr)}.about-grid,.contact-grid{grid-template-columns:1fr}}
+    @media(max-width:650px){.container{width:min(100% - 30px,1120px)}.nav{height:66px}.menu-btn{display:block}.nav-links{display:none;position:absolute;top:66px;left:0;right:0;background:var(--panel);padding:18px 22px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:15px}.nav-links.open{display:flex}.hero{min-height:auto;padding:70px 0 45px}h1{letter-spacing:-2px}.skills-grid,.projects-grid{grid-template-columns:1fr}section{padding:62px 0}.card{padding:22px}.quick-facts{grid-template-columns:1fr 1fr}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">RUDRO<span>.</span></a>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#education">Education</a>
+      <a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">☼</button>
+      <button class="menu-btn" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="container hero" id="home">
+    <div class="reveal">
+      <div class="eyebrow">Hello, welcome to my portfolio</div>
+      <h1>I'm <span>Rownok Jahan Rudro</span></h1>
+      <p><strong class="gradient">BBA Graduate · AI Learner · Digital Creative</strong><br>
+        I enjoy exploring artificial intelligence, digital marketing and practical technology. I’m building my skills to create useful digital experiences and help ideas grow online.</p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#projects">Explore My Work <span>↗</span></a>
+        <a class="btn btn-secondary" href="#contact">Get in Touch</a>
+      </div>
+    </div>
+    <aside class="hero-card reveal">
+      <div class="availability"><span class="dot"></span> Open to learning & collaboration</div>
+      <div class="initials" aria-label="RJ initials">RJ</div>
+      <h2>Rownok Jahan Rudro</h2>
+      <p>Digital creativity powered by curiosity, learning and AI.</p>
+      <div class="quick-facts">
+        <div class="fact"><strong>Bangladesh</strong><small>Based in</small></div>
+        <div class="fact"><strong>BBA</strong><small>Graduate</small></div>
+        <div class="fact"><strong>AI</strong><small>Learning</small></div>
+        <div class="fact"><strong>Digital</strong><small>Interests</small></div>
+      </div>
+    </aside>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal"><div class="eyebrow">A little introduction</div><h2>About <span class="gradient">Me</span></h2><p>Get to know my background and what motivates me.</p></div>
+      <div class="about-grid">
+        <article class="card reveal"><h3>Who am I?</h3>
+          <p>I’m Rownok Jahan Rudro, a BBA graduate from National University, Bangladesh. I’m interested in the ways technology and creativity can solve everyday problems. I’m currently developing practical knowledge in AI tools, digital marketing, website creation and workflow automation.</p>
+          <p style="margin-top:13px">My goal is to keep learning, build meaningful projects and grow as a digital professional.</p>
+        </article>
+        <article class="card reveal"><h3>Personal Details</h3>
+          <div class="info-list">
+            <div class="info-row"><span>Full name</span><span>Rownok Jahan Rudro</span></div>
+            <div class="info-row"><span>Qualification</span><span>BBA Graduate</span></div>
+            <div class="info-row"><span>Nationality</span><span>Bangladeshi</span></div>
+            <div class="info-row"><span>Location</span><span>Thakurgaon, Bangladesh</span></div>
+            <div class="info-row"><span>Email</span><span>rownokjahan921@gmail.com</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-head reveal"><div class="eyebrow">What I'm developing</div><h2>My <span class="gradient">Skills</span></h2><p>A growing mix of digital, technical and professional skills.</p></div>
+      <div class="skills-grid">
+        <article class="card skill-card reveal"><div class="symbol">✦</div><h3>AI & Creative Tools</h3><p>Using AI tools to explore ideas and create digital content.</p><div class="tags"><span class="tag">AI Basics</span><span class="tag">Prompt Writing</span><span class="tag">AI Content</span></div></article>
+        <article class="card skill-card reveal"><div class="symbol">⌘</div><h3>Office Applications</h3><p>Preparing documents, spreadsheets and presentations.</p><div class="tags"><span class="tag">MS Word</span><span class="tag">Excel</span><span class="tag">PowerPoint</span></div></article>
+        <article class="card skill-card reveal"><div class="symbol">◎</div><h3>Digital Marketing</h3><p>Learning online promotion and social media content strategies.</p><div class="tags"><span class="tag">Social Media</span><span class="tag">Email Marketing</span><span class="tag">SEO Basics</span></div></article>
+        <article class="card skill-card reveal"><div class="symbol">⌘</div><h3>Website & E-commerce</h3><p>Exploring website setup and online business experiences.</p><div class="tags"><span class="tag">WordPress</span><span class="tag">E-commerce</span><span class="tag">HTML Basics</span></div></article>
+        <article class="card skill-card reveal"><div class="symbol">⟳</div><h3>Workflow Automation</h3><p>Practising ways to connect tools and simplify repetitive tasks.</p><div class="tags"><span class="tag">n8n</span><span class="tag">Zapier</span><span class="tag">ManyChat</span></div></article>
+        <article class="card skill-card reveal"><div class="symbol">✧</div><h3>Professional Skills</h3><p>Focused on communication, creativity and continuous learning.</p><div class="tags"><span class="tag">Communication</span><span class="tag">Teamwork</span><span class="tag">Problem Solving</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-head reveal"><div class="eyebrow">My learning journey</div><h2>Education & <span class="gradient">Training</span></h2><p>Academic background and professional development.</p></div>
+      <div class="timeline">
+        <article class="card timeline-item reveal"><h3>Bachelor of Business Administration (BBA)</h3><div class="meta">National University, Bangladesh</div><p>CGPA: 2.94</p></article>
+        <article class="card timeline-item reveal"><h3>Higher Secondary Certificate (HSC) — Science</h3><div class="meta">Thakurgaon Road College</div><p>GPA: 3.17</p></article>
+        <article class="card timeline-item reveal"><h3>Secondary School Certificate (SSC) — Science</h3><div class="meta">Mathurapur Public High School</div><p>GPA: 4.06</p></article>
+        <article class="card timeline-item reveal"><h3>AI Basic Course</h3><div class="meta">Department of Youth Development, Bangladesh</div><p>Learning the fundamentals and practical uses of artificial intelligence.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head reveal"><div class="eyebrow">Selected practice work</div><h2>My <span class="gradient">Projects</span></h2><p>Some project areas I have explored and practised.</p></div>
+      <div class="projects-grid">
+        <article class="card project reveal"><div><div class="project-top"><div class="project-icon">✦</div><span class="tag">AI & Design</span></div><h3 style="margin-top:18px">AI-Powered Promotional Content</h3><p>Exploring AI-assisted video scripts, promotional concepts and creative content for a digital brand.</p></div><span class="tag">Rownok Jahan Rudro Canvas</span></article>
+        <article class="card project reveal"><div><div class="project-top"><div class="project-icon">▣</div><span class="tag">Web</span></div><h3 style="margin-top:18px">E-commerce Website Concept</h3><p>Planning a WordPress-based online business website, including its pages and customer experience.</p></div><span class="tag">WordPress · E-commerce</span></article>
+        <article class="card project reveal"><div><div class="project-top"><div class="project-icon">⟳</div><span class="tag">Automation</span></div><h3 style="margin-top:18px">Workflow Automation Practice</h3><p>Learning how forms, spreadsheets and email tools can work together to reduce repetitive tasks.</p></div><span class="tag">n8n · Google Sheets</span></article>
+        <article class="card project reveal"><div><div class="project-top"><div class="project-icon">⌕</div><span class="tag">Content</span></div><h3 style="margin-top:18px">SEO Article Research</h3><p>Practising keyword-focused article structure, product comparisons and helpful reader content.</p></div><span class="tag">SEO · Content Writing</span></article>
+      </div>
+      <p class="form-note" style="text-align:center;margin-top:18px">These are learning and practice project summaries. Add live project links as your work is published.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-head reveal"><div class="eyebrow">Let's connect</div><h2>Get in <span class="gradient">Touch</span></h2><p>Have a project, idea or opportunity? Send me a message.</p></div>
+      <div class="contact-grid">
+        <article class="card reveal"><h3>Contact Information</h3>
+          <div class="contact-method"><small>Email</small><a href="mailto:rownokjahan921@gmail.com">rownokjahan921@gmail.com</a></div>
+          <div class="contact-method"><small>Phone</small><a href="tel:+8801517163921">+880 1517-163921</a></div>
+          <div class="contact-method"><small>Location</small><span>Thakurgaon, Bangladesh</span></div>
+          <button class="btn btn-secondary" id="copyEmail" style="margin-top:18px">Copy Email</button>
+        </article>
+        <article class="card reveal"><h3>Send a Message</h3>
+          <form id="contactForm">
+            <input id="senderName" type="text" placeholder="Your name" required>
+            <input id="senderEmail" type="email" placeholder="Your email address" required>
+            <textarea id="senderMessage" placeholder="Write your message..." required></textarea>
+            <button class="btn btn-primary" type="submit">Send via Email ↗</button>
+            <p class="form-note">This form opens your email app with the message prepared. It does not send data to a server.</p>
+          </form>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="container footer-inner"><span>© <span id="year"></span> Rownok Jahan Rudro. All rights reserved.</span><span>Dream · Learn · Grow</span></div></footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.textContent = open ? '✕' : '☰';
+  });
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.textContent = '☰';
+  }));
+
+  const themeToggle = document.getElementById('themeToggle');
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+    const light = document.body.classList.contains('light');
+    themeToggle.textContent = light ? '☾' : '☼';
+    document.querySelector('meta[name="theme-color"]').content = light ? '#f4f7fc' : '#0b1020';
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  document.getElementById('copyEmail').addEventListener('click', async () => {
+    const email = 'rownokjahan921@gmail.com';
+    try {
+      await navigator.clipboard.writeText(email);
+      document.getElementById('copyEmail').textContent = 'Email Copied ✓';
+    } catch {
+      window.location.href = 'mailto:' + email;
+    }
+  });
+
+  document.getElementById('contactForm').addEventListener('submit', event => {
+    event.preventDefault();
+    const name = document.getElementById('senderName').value.trim();
+    const email = document.getElementById('senderEmail').value.trim();
+    const message = document.getElementById('senderMessage').value.trim();
+    const subject = encodeURIComponent('Portfolio contact from ' + name);
+    const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+    window.location.href = 'mailto:rownokjahan921@gmail.com?subject=' + subject + '&body=' + body;
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.12});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const sections = document.querySelectorAll('main section[id]');
+  const links = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      if (window.scrollY >= section.offsetTop - 130) current = section.id;
+    });
+    links.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + current));
+  }, {passive:true});
+</script>
+</body>
+</html>
